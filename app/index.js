@@ -1,9 +1,12 @@
 import express from "express";
+
 import sequelize from "./utils/utils.database.js";
 
 import router from "./routes/route.user.js";
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded());
 
 app.use("/users", router);
 
